@@ -1,0 +1,14 @@
+.buscador-alojamiento{
+  height: auto;
+  width: 100%;
+  background-color: #D4D2D2;
+}
+
+.buscador-alojamiento .item{
+  display: inline-block;
+  margin:25px;
+}
+
+.buscador-alojamiento label{
+  font-weight: bold;
+}
