@@ -10,6 +10,7 @@ import { EditUsuarioComponent } from './components/Persona/edit-usuario/edit-usu
 import { FormsModule } from '@angular/forms';
 import { UsuarioService } from './service/usuario.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     AddUsuarioComponent,
     ListarUsuarioComponent,
     EditUsuarioComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

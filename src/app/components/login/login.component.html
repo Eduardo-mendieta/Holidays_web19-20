@@ -1,0 +1,24 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Iniciar Sesión</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <br>
+                <div class="form-group">
+                    <label for="">Correo:</label>
+                    <input type="text" class="form-control" id="Correo" required [(ngModel)]="usuario.correo" name="correo">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Contraseña:</label>
+                    <input type="text" class="form-control" id="Password" required [(ngModel)]="usuario.password" name="password">
+                </div>
+                <br>
+                <br>
+                <button class="btn btn-danger">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>
