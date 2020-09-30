@@ -1,8 +1,9 @@
 export class Usuario {
-    id: number;
+    id?: number;
     nombre: string;
     correo: string;
     genero: string;
     fechaNacimiento: Date;
     telefono: string;
 }
+
