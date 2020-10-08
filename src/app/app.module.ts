@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BusquedaAlojamientoComponent } from './components/busqueda-alojamiento/busqueda-alojamiento.component';
+import { BusquedaAlojamientoComponent } from './components/Alojamiento/busqueda-alojamiento/busqueda-alojamiento.component';
 import { AddUsuarioComponent } from './components/Persona/add-usuario/add-usuario.component';
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
 import { EditUsuarioComponent } from './components/Persona/edit-usuario/edit-usuario.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioService } from './service/usuario.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { MenuNavComponent } from './components/menu-nav/menu-nav.component';
+import { SesionComponent } from './components/sesion/sesion.component';
+import { HomeComponent } from './components/home/home.component';
+import { TarjetaAlojamientoComponent } from './components/Alojamiento/tarjeta-alojamiento/tarjeta-alojamiento.component';
+// tslint:disable-next-line: max-line-length
+import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
+
 
 @NgModule({
   declarations: [
@@ -20,12 +27,18 @@ import { LoginComponent } from './components/login/login.component';
     ListarUsuarioComponent,
     EditUsuarioComponent,
     LoginComponent,
+    MenuNavComponent,
+    SesionComponent,
+    HomeComponent,
+    TarjetaAlojamientoComponent,
+    ListarAlojamientoDisponibleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

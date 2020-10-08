@@ -1,0 +1,31 @@
+.sesion{
+    height: fit-content;
+    margin-top: -15px;
+}
+.sesion .items-sesion .item{
+    display: inline-block;
+    margin: 0 10px auto 0;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid 1px white;
+    padding: 2px 20px;
+}
+
+.sesion .items-sesion .item-registrare{
+    background-color: white;
+}
+
+.sesion .items-sesion .item-registrare a{
+    text-decoration: none;
+    color: #0D61A4; /*Color: Azul-menu*/
+}
+
+.sesion .items-sesion .item-sesion a{
+    text-decoration: none;
+    color: white;
+}
+
+.sesion .items-sesion .item:hover{
+    border: solid 1px yellowgreen ;
+}

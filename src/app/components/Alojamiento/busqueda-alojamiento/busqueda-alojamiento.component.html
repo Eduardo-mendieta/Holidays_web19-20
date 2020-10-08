@@ -1,0 +1,25 @@
+<form [formGroup]="formulario" (ngSubmit)="enviar(formulario.value)" class="buscador-alojamiento">
+    <div class="item">
+        <label for="ciudad">Ciudad:</label> <br>
+        <select formControlName="ciudad" name="ciudades" id="ciudad">
+            <option *ngFor="let ciudad of listaCiudades" [value]="ciudad.nombre">
+                {{ciudad.nombre}}
+            </option>
+            <option *ngIf="listaCiudades == null" value="0"> -------- </option>
+        </select>
+    </div>
+    <div class="item">
+        <label for="huespedes">Huespedes:</label> <br>
+        <input formControlName="huespedes" id="huespedes" type="number" name="huespedes" value="1" max="10" min="1">
+    </div>
+    <div class="item">
+        <label for="fecha-inicial">Fecha Inicial:</label> <br>
+        <input formControlName="fecha_inicio" id="fecha-inicial" type="date" name="" value="">
+    </div>
+    <div class="item">
+        <label for="fecha-fin">Fecha Inicial:</label> <br>
+        <input formControlName="fecha_fin" id="fecha-fin" type="date" name="" value="">
+    </div>
+    <button type="submit" name="button">Buscar</button>
+</form>
+

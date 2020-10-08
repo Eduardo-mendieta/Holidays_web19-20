@@ -3,12 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddUsuarioComponent } from './components/Persona/add-usuario/add-usuario.component';
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
 import { EditUsuarioComponent } from './components/Persona/edit-usuario/edit-usuario.component';
+// tslint:disable-next-line: max-line-length
+import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
+  {path: 'home', component: HomeComponent},
+  {path: 'alojamientos-disponibles', component: ListarAlojamientoDisponibleComponent},
   {path: 'crearUsuario', component: AddUsuarioComponent },
   {path: 'listarUsuario', component: ListarUsuarioComponent},
-  {path: 'editarUsuario', component: EditUsuarioComponent}
+  {path: 'editarUsuario', component: EditUsuarioComponent},
+  {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 @NgModule({
