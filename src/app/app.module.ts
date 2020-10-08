@@ -7,10 +7,11 @@ import { BusquedaAlojamientoComponent } from './components/busqueda-alojamiento/
 import { AddUsuarioComponent } from './components/Persona/add-usuario/add-usuario.component';
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
 import { EditUsuarioComponent } from './components/Persona/edit-usuario/edit-usuario.component';
-import { FormsModule } from '@angular/forms';
-import { UsuarioService } from './service/usuario.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { AlojamientoDetalleComponent } from './components/alojamiento-detalle/alojamiento-detalle.component';
+import { UsuarioService } from './service/usuario.service';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,14 @@ import { LoginComponent } from './components/login/login.component';
     ListarUsuarioComponent,
     EditUsuarioComponent,
     LoginComponent,
+    AlojamientoDetalleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

@@ -5,5 +5,6 @@ export class Usuario {
     genero: string;
     fechaNacimiento: Date;
     telefono: string;
+    password: string;
 }
 
