@@ -1,0 +1,44 @@
+
+.contenedor .calificacion p{
+    display: inline-block;
+    color: #0D61A4;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contenedor .tarjeta{
+    margin-top: -12px;
+    border-radius: 15px;
+    border: solid 1px #ebeaea;
+    background-color: #f0ecec;
+}
+
+.contenedor .tarjeta img{
+    width: 100%;
+    height: 170px;
+    margin-bottom: 10px;
+     border-radius: 15px 15px 0 0;
+}
+
+.contenedor .tarjeta p{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: rgb(90, 90, 90);
+    font-size: 16.5px;
+}
+
+.contenedor .tarjeta p span{
+    color: #0D61A4;
+    font-size: 18px;
+}
+
+.contenedor .tarjeta p .precio{
+    color:rgb(167, 112, 11);
+    font-size: 18px;
+}
+
+.contenedor .tarjeta .btn-ver-mas{
+    width: fit-content;
+    margin: 10px auto 20px auto;
+}

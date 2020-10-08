@@ -1,0 +1,36 @@
+.menu-nav{
+    height: fit-content;
+    background-color: #0D61A4;/* Color: Azul-menu*/
+}
+
+.menu-nav .logo{
+    display: inline-block;
+    margin: 10px 50px;
+}
+
+.menu-nav .logo img{
+    height: 60px;
+}
+
+.menu-nav .items-menu{
+    display: flex;
+    float: right;
+    margin: 25px 3% auto auto;
+}
+
+.menu-nav .item{
+    display: inline-block;
+}
+
+.menu-nav .item a{
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: auto 10px;
+}
+
+/* ================================= SESION ================================= */
+
+.menu-nav .items-menu .sesion{
+    margin: auto 10px;
+}
