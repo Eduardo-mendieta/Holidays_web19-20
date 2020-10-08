@@ -1,0 +1,30 @@
+<!-- -------------- Buscador Alojamiento -------------- -->
+<app-busqueda-alojamiento></app-busqueda-alojamiento>
+
+
+<!-- -------------- Tarjeta -------------- -->
+<div class="contenedor">
+    <div class="titulo">
+        <div *ngIf="listaAlojamientos != null">
+            <p *ngIf="listaAlojamientos.length > 0">
+                Buscar Alojamiento en
+                <span>{{datosBusqueda.ciudad}}</span> desde
+                <span>{{datosBusqueda.fechaInicial}}</span> hasta
+                <span>{{datosBusqueda.fechaFinal}}</span>.
+            </p>
+            <p *ngIf="listaAlojamientos.length == 0">
+                !Lo sentimos no hay Alojamientos disponibles en
+                <span>{{datosBusqueda.ciudad}}</span> desde
+                <span>{{datosBusqueda.fechaInicial}}</span> hasta
+                <span>{{datosBusqueda.fechaFinal}}</span>.
+            </p>
+        </div>
+        <p *ngIf="datosBusqueda == null || listaAlojamientos == null">
+            !Lo sentimos, el servidor esta temporalmente fuera de servicio! :(
+        </p>
+    </div>
+    <div *ngFor="let alojamiento of listaAlojamientos" class="tarjeta">
+        <app-tarjeta-alojamiento [alojamiento]="alojamiento" ></app-tarjeta-alojamiento>
+    </div>
+    
+</div>

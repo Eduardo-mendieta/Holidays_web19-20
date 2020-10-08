@@ -22,4 +22,5 @@ export class AppComponent {
   editarUsuario() {
     this.router.navigate(["editarUsuario"]);
   }
+
 }
