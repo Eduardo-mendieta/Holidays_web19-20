@@ -10,7 +10,9 @@ import { EditUsuarioComponent } from './components/Persona/edit-usuario/edit-usu
 import { FormsModule } from '@angular/forms';
 import { UsuarioService } from './service/usuario.service';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './components/login/login.component';
+import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamiento/add-alojamiento.component';
+import { UpdateAlojamientoComponent } from './components/Alojamiento/update-alojamiento/update-alojamiento.component';
+import { AlojamientoService } from './service/alojamiento.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { LoginComponent } from './components/login/login.component';
     AddUsuarioComponent,
     ListarUsuarioComponent,
     EditUsuarioComponent,
-    LoginComponent,
+    AddAlojamientoComponent,
+    UpdateAlojamientoComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService, AlojamientoService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
