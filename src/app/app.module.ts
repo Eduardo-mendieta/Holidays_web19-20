@@ -8,23 +8,16 @@ import { AddUsuarioComponent } from './components/Persona/add-usuario/add-usuari
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
 import { EditUsuarioComponent } from './components/Persona/edit-usuario/edit-usuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { AlojamientoDetalleComponent } from './components/alojamiento-detalle/alojamiento-detalle.component';
-import { UsuarioService } from './service/usuario.service';
-=======
-import { UsuarioService } from './service/usuario.service';
-import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './components/login/login.component';
 import { MenuNavComponent } from './components/menu-nav/menu-nav.component';
 import { SesionComponent } from './components/sesion/sesion.component';
 import { HomeComponent } from './components/home/home.component';
 import { TarjetaAlojamientoComponent } from './components/Alojamiento/tarjeta-alojamiento/tarjeta-alojamiento.component';
-// tslint:disable-next-line: max-line-length
 import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
+import { UsuarioService } from './service/usuario.service';
 
->>>>>>> aa65d8c21248115aa965f2b65c15df4b19d3c47d
 
 @NgModule({
   declarations: [
@@ -34,15 +27,12 @@ import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/l
     ListarUsuarioComponent,
     EditUsuarioComponent,
     LoginComponent,
-<<<<<<< HEAD
     AlojamientoDetalleComponent,
-=======
     MenuNavComponent,
     SesionComponent,
     HomeComponent,
     TarjetaAlojamientoComponent,
     ListarAlojamientoDisponibleComponent,
->>>>>>> aa65d8c21248115aa965f2b65c15df4b19d3c47d
   ],
   imports: [
     BrowserModule,
