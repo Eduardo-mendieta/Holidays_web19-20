@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BusquedaAlojamientoComponent } from './components/Alojamiento/busqueda-alojamiento/busqueda-alojamiento.component';
@@ -8,16 +7,18 @@ import { AddUsuarioComponent } from './components/Persona/add-usuario/add-usuari
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
 import { EditUsuarioComponent } from './components/Persona/edit-usuario/edit-usuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
-import { AlojamientoDetalleComponent } from './components/alojamiento-detalle/alojamiento-detalle.component';
 import { MenuNavComponent } from './components/menu-nav/menu-nav.component';
 import { SesionComponent } from './components/sesion/sesion.component';
 import { HomeComponent } from './components/home/home.component';
 import { TarjetaAlojamientoComponent } from './components/Alojamiento/tarjeta-alojamiento/tarjeta-alojamiento.component';
 import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
 import { UsuarioService } from './service/usuario.service';
-
+import { AlojamientoDetalleComponent } from './components/alojamiento/alojamiento-detalle/alojamiento-detalle.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AlojamientoService } from './service/alojamiento.service';
+import { UpdateAlojamientoComponent } from './components/Alojamiento/update-alojamiento/update-alojamiento.component';
+import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamiento/add-alojamiento.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { UsuarioService } from './service/usuario.service';
     AddUsuarioComponent,
     ListarUsuarioComponent,
     EditUsuarioComponent,
+    AddAlojamientoComponent,
+    UpdateAlojamientoComponent,
     LoginComponent,
     AlojamientoDetalleComponent,
     MenuNavComponent,
@@ -41,7 +44,7 @@ import { UsuarioService } from './service/usuario.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService, AlojamientoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

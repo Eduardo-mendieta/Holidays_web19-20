@@ -67,12 +67,12 @@ export class BusquedaAlojamientoComponent implements OnInit {
       datos => {
         console.log(datos);
         this.listaAlojamientos = datos.respuesta;
+        this.comunicador.enviarDatosDiponibilidad(this.datosBusqueda);
+        this.comunicador.enviarAlojamientosDisponibles(this.listaAlojamientos);
       },
       error => {
         console.log('¡Servidor temporalmente fuera de servicio!');
       }
     );
-    this.comunicador.enviarDatosDiponibilidad(this.datosBusqueda);
-    this.comunicador.enviarAlojamientosDisponibles(this.listaAlojamientos);
   }
 }

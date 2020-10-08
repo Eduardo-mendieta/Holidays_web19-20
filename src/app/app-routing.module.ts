@@ -5,9 +5,9 @@ import { ListarUsuarioComponent } from './components/Persona/listar-usuario/list
 import { EditUsuarioComponent } from './components/Persona/edit-usuario/edit-usuario.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamiento/add-alojamiento.component';
+import { UpdateAlojamientoComponent } from './components/Alojamiento/update-alojamiento/update-alojamiento.component';
 import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
-
-
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -15,6 +15,8 @@ const routes: Routes = [
   {path: 'crearUsuario', component: AddUsuarioComponent },
   {path: 'listarUsuario', component: ListarUsuarioComponent},
   {path: 'editarUsuario', component: EditUsuarioComponent},
+  {path: 'registrarse', component: AddUsuarioComponent },
+  {path: 'crearAlojamiento', component: AddAlojamientoComponent },
   {path: 'login', component: LoginComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];

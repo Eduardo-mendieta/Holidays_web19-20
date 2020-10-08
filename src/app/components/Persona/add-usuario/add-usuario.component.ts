@@ -11,7 +11,7 @@ import { Usuario } from '../../../model/usuario.model';
 export class AddUsuarioComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
-  constructor(private reouter: Router, private service:UsuarioService) { }
+  constructor(private reouter: Router, private service: UsuarioService) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +19,8 @@ export class AddUsuarioComponent implements OnInit {
   Guardar() {
     this.service.createUsuario(this.usuario)
     .subscribe(data => {
-      alert("Se Agrego nuevo Usuario");
-    } )
+      alert('Se Agrego nuevo Usuario');
+    } );
   }
+
 }
