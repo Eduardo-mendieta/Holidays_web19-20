@@ -10,7 +10,7 @@ export class Alojamiento {
     servicios: string;
     numeroHuespedes: number;
     numeroCamas: number;
-    numeroBaños: number;
+    numeroBanos: number;
     numeroHabitaciones: number;
     precioPorNoche: number;
     disponible: boolean;

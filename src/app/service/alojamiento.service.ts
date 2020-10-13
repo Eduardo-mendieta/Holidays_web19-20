@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { BusquedaAlojamiento } from '../util/busqueda-alojamiento.util';
 import { HttpListResponse } from '../http/List.http.respose';
 import { Alojamiento } from '../model/alojamiento.model';
+import { HttpSimpleResponse } from '../http/simple.http.response';
+import { HttpObjectResponse } from '../http/http.object.response';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class AlojamientoService {
 /* ============================= VARIABLES ============================= */
   urlBusqueda = 'http://localhost:9898/enjoy-holidays/alojamientos/buscar';
   UrlAlojamiento = 'http://localhost:9898/enjoy-holidays';
-
+  UrlID = 'http://localhost:9898/enjoy-holidays/alojamientos';
 
 /* ============================= CONSTRUCTORES ============================= */
   constructor(private httpClient: HttpClient) { }
@@ -32,4 +34,8 @@ export class AlojamientoService {
   createAlojamiento(alojamiento: Alojamiento) {
     return this.httpClient.post<Alojamiento>(this.UrlAlojamiento, alojamiento);
   }
+
+  getAlojomientoID(id: number) {
+    return this.httpClient.get<HttpObjectResponse<Alojamiento>>(`${this.UrlID}/${id}`);
+}
 }
