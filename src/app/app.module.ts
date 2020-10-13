@@ -12,6 +12,7 @@ import { MenuNavComponent } from './components/menu-nav/menu-nav.component';
 import { SesionComponent } from './components/sesion/sesion.component';
 import { HomeComponent } from './components/home/home.component';
 import { TarjetaAlojamientoComponent } from './components/Alojamiento/tarjeta-alojamiento/tarjeta-alojamiento.component';
+// tslint:disable-next-line: max-line-length
 import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
 import { UsuarioService } from './service/usuario.service';
 import { AlojamientoDetalleComponent } from './components/alojamiento/alojamiento-detalle/alojamiento-detalle.component';

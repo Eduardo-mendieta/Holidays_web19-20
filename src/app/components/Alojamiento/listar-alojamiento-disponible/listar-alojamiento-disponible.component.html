@@ -9,18 +9,21 @@
             <p *ngIf="listaAlojamientos.length > 0">
                 Buscar Alojamiento en
                 <span>{{datosBusqueda.ciudad}}</span> desde
-                <span>{{datosBusqueda.fechaInicial}}</span> hasta
-                <span>{{datosBusqueda.fechaFinal}}</span>.
+                <span>{{datosBusqueda.fechaInicio}}</span> hasta
+                <span>{{datosBusqueda.fechaFin}}</span>.
             </p>
             <p *ngIf="listaAlojamientos.length == 0">
                 !Lo sentimos no hay Alojamientos disponibles en
                 <span>{{datosBusqueda.ciudad}}</span> desde
-                <span>{{datosBusqueda.fechaInicial}}</span> hasta
-                <span>{{datosBusqueda.fechaFinal}}</span>.
+                <span>{{datosBusqueda.fechaInicio}}</span> hasta
+                <span>{{datosBusqueda.fechaFin}}</span>.
             </p>
         </div>
-        <p *ngIf="datosBusqueda == null || listaAlojamientos == null">
-            !Lo sentimos, el servidor esta temporalmente fuera de servicio! :(
+        <p *ngIf="listaAlojamientos == null && isAppConnected()">
+            ¡Por favor, revise que el periodo de fechas en el que desea reservar esten en el <br> orden correto!
+        </p>
+        <p *ngIf="listaAlojamientos == null && !isAppConnected()">
+            ¡Lo sentimos, el servidor esta temporalmente fuera de servicio! :(
         </p>
     </div>
     <div *ngFor="let alojamiento of listaAlojamientos" class="tarjeta">
