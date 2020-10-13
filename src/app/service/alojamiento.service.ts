@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BusquedaAlojamiento } from '../util/busqueda-alojamiento.util';
+/*import { BusquedaAlojamiento } from '../util/busqueda-alojamiento.util';*/
 import { HttpListResponse } from '../http/List.http.respose';
 import { Alojamiento } from '../model/alojamiento.model';
 import { HttpSimpleResponse } from '../http/simple.http.response';
@@ -21,9 +21,17 @@ export class AlojamientoService {
 
 
 /* ============================= MÉTODOS ============================= */
-  getAlojamientosDisponibles(data: BusquedaAlojamiento) {
+  /*getAlojamientosDisponibles(data: BusquedaAlojamiento) {
     // tslint:disable-next-line: max-line-length
-    return this.httpClient.get<HttpListResponse<Alojamiento>>(`${this.urlBusqueda}/${data.ciudad}/${data.huespedes}/${data.fechaInicial}/${data.fechaFinal}`);
+    return this.httpClient.get<HttpListResponse<Alojamiento>>
+    (`${this.urlBusqueda}/${data.ciudad}/${data.huespedes}/${data.fechaInicial}/${data.fechaFinal}`);
+  }*/
+
+  getAlojamientosDisponibles(ciudad: string, noHuespedes: string,
+                             fechaInicio: string, fechaFin: string) {
+    return this.httpClient.get<HttpListResponse<Alojamiento>>(
+      `${this.urlBusqueda}/${ciudad}/${noHuespedes}/${fechaInicio}/${fechaFin}`
+    );
   }
 
   getAlojamiento() {
