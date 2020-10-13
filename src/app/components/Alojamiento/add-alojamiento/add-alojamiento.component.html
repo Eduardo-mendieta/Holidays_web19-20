@@ -1,1 +1,58 @@
-<p>add-alojamiento works!</p>
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar nuevo Alojamiento</h3>
+        </div>
+        <div [hidden]="submitted" style="width: 400px;">
+            <form (ngSubmit)="onSubmit ()">
+                <div class="form-group">
+                    <label for="name">Descripción:</label>
+                    <input type="text" class="form-control" id="Descripcion" required [(ngModel)]="alojamieto.descripcion" name="descripcion">
+                </div>
+                <div class="form-group">
+                    <label for="name">Ubicaión:</label>
+                    <input type="text" class="form-control" id="ubicacion" required [(ngModel)]="alojamieto.ubicacion" name="ubicacion">
+                </div>
+                <div class="form-group">
+                    <label for="name">Condiciones de Uso :</label>
+                    <input type="text" class="form-control" id="condiciones" required [(ngModel)]="alojamieto.condicionesUso" name="condiciones">
+                </div>
+                <div class="form-group">
+                    <label for="name">Servicios:</label>
+                    <input type="text" class="form-control" id="servicios" required [(ngModel)]="alojamieto.servicios" name="servicios">
+                </div>
+                <div class="form-group">
+                    <label for="name">Número de huespedes:</label>
+                    <input type="text" class="form-control" id="Nhuespedes" required [(ngModel)]="alojamieto.numeroHuespedes" name="nHuespedes">
+                </div>
+                <div class="form-group">
+                    <label for="name">Número de camas:</label>
+                    <input type="text" class="form-control" id="nCamas" required [(ngModel)]="alojamieto.numeroCamas" name="nCamas">
+                </div>
+                <div class="form-group">
+                    <label for="name">Número de baños:</label>
+                    <input type="text" class="form-control" id="nBaños" required [(ngModel)]="alojamieto.numeroBanos" name="nBaños">
+                </div>
+                <div class="form-group">
+                    <label for="name">Número de habitaciones:</label>
+                    <input type="text" class="form-control" id="nHabitaciones" required [(ngModel)]="alojamieto.numeroHabitaciones" name="nHabitaciones">
+                </div>
+                <div class="form-group">
+                    <label for="name">Precio:</label>
+                    <input type="text" class="form-control" id="precio" required [(ngModel)]="alojamieto.precioPorNoche" name="precio">
+                </div>
+                <div class="form-group">
+                    <label for="name">Disponbilidad:</label>
+                    <input type="text" class="form-control" id="nCamas" required [(ngModel)]="alojamieto.disponible" name="nCamas">
+                </div>
+
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>Agregado Correctamente!</h4>
+    <!--registra-->
+</div>

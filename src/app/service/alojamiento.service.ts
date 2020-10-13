@@ -5,6 +5,7 @@ import { HttpListResponse } from '../http/List.http.respose';
 import { Alojamiento } from '../model/alojamiento.model';
 import { HttpSimpleResponse } from '../http/simple.http.response';
 import { HttpObjectResponse } from '../http/http.object.response';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -38,9 +39,8 @@ export class AlojamientoService {
     return this.httpClient.get<Alojamiento[]>(this.UrlAlojamiento);
   }
 
-
-  createAlojamiento(alojamiento: Alojamiento) {
-    return this.httpClient.post<Alojamiento>(this.UrlAlojamiento, alojamiento);
+  createAlojamiento(alojamiento: Object): Observable<Object> {
+    return this.httpClient.post(`${this.UrlAlojamiento}`, alojamiento);
   }
 
   getAlojomientoID(id: number) {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../model/usuario.model';
 import { HttpSimpleResponse } from '../http/simple.http.response';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -13,13 +14,16 @@ export class UsuarioService {
     urlUsuario = 'http://localhost:9898/enjoy-holidays/usuarios';
     urlLogin = 'http://localhost:9898/enjoy-holidays/usuarios/login';
 
-    getPersonas() {
-        return this.httpClient.get<Usuario[]>(this.urlUsuario);
+
+    // tslint:disable-next-line: ban-types
+    createUser(usuario: Object): Observable<Object> {
+        return this.httpClient.post(`${this.urlUsuario}`, usuario);
     }
 
-    createUsuario(usuario: Usuario) {
-        return this.httpClient.post<Usuario>(this.urlUsuario, usuario);
-    }
+    // tslint:disable-next-line: ban-types
+    updateUser(id: number, value: any): Observable<Object> {
+        return this.httpClient.put(`${this.urlUsuario}/${id}`, value);
+      }
 
     iniciarSesion(correo: string, password: string) {
         return this.httpClient.get<HttpSimpleResponse>(`${this.urlLogin}/${correo}/${password}`);
