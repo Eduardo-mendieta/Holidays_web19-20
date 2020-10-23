@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlojamientoService } from './service/alojamiento.service';
 import { UpdateAlojamientoComponent } from './components/Alojamiento/update-alojamiento/update-alojamiento.component';
 import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamiento/add-alojamiento.component';
+import { DetalleUsuarioComponent } from './components/Persona/detalle-usuario/detalle-usuario.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamient
     HomeComponent,
     TarjetaAlojamientoComponent,
     ListarAlojamientoDisponibleComponent,
+    DetalleUsuarioComponent
   ],
   imports: [
     BrowserModule,
