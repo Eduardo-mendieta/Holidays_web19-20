@@ -37,7 +37,7 @@ detalle(id: number) {
       this.service.getAlojomientoID(id).subscribe(
         () => {
           console.log(this.idAloj);
-          this.router.navigate(['/alojamientos/', this.idAloj]);
+          this.router.navigate(['alojamientos/detalle', this.idAloj]);
         }
       );
   } else {
@@ -45,6 +45,7 @@ detalle(id: number) {
     console.log(this.idAloj);
   }
 }
+
 
 }
 

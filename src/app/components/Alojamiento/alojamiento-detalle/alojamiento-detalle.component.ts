@@ -22,7 +22,10 @@ export class AlojamientoDetalleComponent implements OnInit {
 
 
 /* ======================= CONSTRUCTORES ======================= */
-  constructor(private imgService: ImagenAlojamientoService, private service: AlojamientoService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private imgService: ImagenAlojamientoService,
+              private service: AlojamientoService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params.id;

@@ -23,6 +23,7 @@ const routes: Routes = [
   {path: 'alojamientos/{id}', component: AlojamientoDetalleComponent},
   {path: 'usuarios/listar', component: ListarUsuarioComponent},
   {path: 'usuarios/detalle/:correo', component: DetalleUsuarioComponent},
+  {path: 'alojamientos/detalle/:id', component: AlojamientoDetalleComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
