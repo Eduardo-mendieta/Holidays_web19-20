@@ -35,8 +35,8 @@ export class AlojamientoService {
     );
   }
 
-  getAlojamientoByUsu(correo: string) {
-    return this.httpClient.get<HttpListResponse<Alojamiento>>(`${this.UrlID}/${correo}`);
+  getAlojamientoByUsu(usuario: string) {
+    return this.httpClient.get<HttpListResponse<Alojamiento>>(`${this.UrlID}/${usuario}`);
   }
 
   getAlojamiento() {

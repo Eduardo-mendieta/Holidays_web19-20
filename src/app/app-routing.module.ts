@@ -10,6 +10,7 @@ import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/l
 import { AlojamientoDetalleComponent } from './components/Alojamiento/alojamiento-detalle/alojamiento-detalle.component';
 import { CommonModule } from '@angular/common';
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
+import { DetalleUsuarioComponent } from './components/Persona/detalle-usuario/detalle-usuario.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path: 'usuarios/login', component: LoginComponent},
   {path: 'alojamientos/{id}', component: AlojamientoDetalleComponent},
   {path: 'usuarios/listar', component: ListarUsuarioComponent},
-  {path: 'usuarios/detalle/:correo', component: ListarUsuarioComponent},
+  {path: 'usuarios/detalle/:correo', component: DetalleUsuarioComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

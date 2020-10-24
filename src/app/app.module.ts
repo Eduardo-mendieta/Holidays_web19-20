@@ -21,7 +21,7 @@ import { AlojamientoService } from './service/alojamiento.service';
 import { UpdateAlojamientoComponent } from './components/Alojamiento/update-alojamiento/update-alojamiento.component';
 import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamiento/add-alojamiento.component';
 import { DetalleUsuarioComponent } from './components/Persona/detalle-usuario/detalle-usuario.component';
-import { EditAlojamientoComponent } from './components/Alojamiento/edit-alojamiento/edit-alojamiento.component';
+import { ListarAlojamientoUsuComponent } from './components/Alojamiento/listar-alojamiento-usu/listar-alojamiento-usu.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +39,8 @@ import { EditAlojamientoComponent } from './components/Alojamiento/edit-alojamie
     HomeComponent,
     TarjetaAlojamientoComponent,
     ListarAlojamientoDisponibleComponent,
-    EditAlojamientoComponent,
-    DetalleUsuarioComponent
+    DetalleUsuarioComponent,
+    ListarAlojamientoUsuComponent
   ],
   imports: [
     BrowserModule,
