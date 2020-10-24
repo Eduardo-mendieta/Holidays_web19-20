@@ -1,7 +1,7 @@
 .buscador-alojamiento{
-  height: auto;
-  width: 100%;
-  background-color: #D4D2D2;
+  height: fit-content;
+  width:fit-content;
+  margin: 5px auto 5px auto;
 }
 
 .buscador-alojamiento .item{
