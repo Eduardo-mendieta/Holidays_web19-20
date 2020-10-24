@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
 
   signupForm: FormGroup;
   usuarioLogeado = 0;
+  correo: string;
+  contrasena: string;
 
   constructor(private service: UsuarioService, private builder: FormBuilder,
               private router: Router) {
@@ -27,14 +29,16 @@ export class LoginComponent implements OnInit {
   }
 
   iniciarSesion(values) {
-    this.service.iniciarSesion(this.signupForm.get('correo').value, this.signupForm.get('password').value).subscribe(
+    this.correo = this.signupForm.get('correo').value;
+    this.contrasena = this.signupForm.get('password').value;
+    this.service.iniciarSesion(this.correo, this.contrasena).subscribe(
       data => {
         this.usuarioLogeado = data.codigo;
         console.log(data);
         if (this.usuarioLogeado === HttpCode.OK) {
           console.log('Acceso Permitido');
           AppUtil.sesion = true;
-          this.router.navigate(['/home']);
+          this.goDetalles(this.correo);
         } else {
           console.log('Acceso Denegado');
         }
@@ -45,4 +49,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  goDetalles(correo: string) {
+    this.router.navigate(['usuarios/detalle', correo]);
+  }
 }

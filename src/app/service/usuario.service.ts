@@ -34,3 +34,4 @@ export class UsuarioService {
         return this.httpClient.get<HttpSimpleResponse>(`${this.urlLogin}/${correo}/${password}`);
     }
 }
+ 

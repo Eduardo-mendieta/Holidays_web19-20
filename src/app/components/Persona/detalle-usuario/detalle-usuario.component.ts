@@ -13,9 +13,9 @@ import { AlojamientoService } from '../../../service/alojamiento.service';
 })
 export class DetalleUsuarioComponent implements OnInit {
 
-  corre: string;
+  correo: string;
   usuario: Usuario;
-  usuarioLogeado = 0;
+  codigo = 0;
 
   constructor(private route: ActivatedRoute, private router: Router,
               private usuarioService: UsuarioService,
@@ -23,22 +23,20 @@ export class DetalleUsuarioComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
-    this.usuario = new Usuario();
+    this.correo = this.route.snapshot.params['correo'];
 
-    this.corre = this.route.snapshot.params['correo'];
-
-    this.usuarioService.buscarpor(this.corre)
+    this.usuarioService.buscarpor(this.correo)
       .subscribe(data => {
-        this.usuarioLogeado = data.codigo;
+        this.codigo = data.codigo;
         this.usuario = data.respuesta;
         console.log(data);
-        if (this.usuarioLogeado === HttpCode.OK) {
+        if (this.codigo === HttpCode.OK) {
           console.log('Realizado con exito');
         } else {
           console.log('Problema al realiazar la transacción');
         }
       }, err => {
-        alert(err);
+        console.log('Error en el componente de cuenta de usuario!');
       });
 
   }

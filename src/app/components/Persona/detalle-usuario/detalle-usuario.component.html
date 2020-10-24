@@ -5,7 +5,7 @@
 <h2>Datos del Usuario</h2>
 <div>
     <hr/>
-    <div *ngIf="usuario">
+    <div>
         <div>
             <label><b>Nombre:</b></label> {{usuario.nombre}}
         </div>
@@ -29,6 +29,6 @@
     <button (click)="agregar()" class="btn btn-warning" style="margin-left: 10px">Agregar Nuevo Alojamiento</button><br>
     <br><br><br>
 
-    <app-listar-alojamiento-usu></app-listar-alojamiento-usu>
+    <app-listar-alojamiento-usu [correo] = "correo"></app-listar-alojamiento-usu>
 
 </div>

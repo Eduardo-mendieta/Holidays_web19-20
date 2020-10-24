@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpObjectResponse } from '../../../http/http.object.response';
 import { Alojamiento } from '../../../model/alojamiento.model';
@@ -13,9 +13,9 @@ import { HttpCode } from 'src/app/http/Code.http.reponse';
 })
 export class ListarAlojamientoUsuComponent implements OnInit {
 
-  usuario: Usuario;
+  @Input() correo: string;
   alojamientos: Array<Alojamiento>;
-  usuarioLogeado = 0;
+  codigo = 0;
 
   constructor(private route: ActivatedRoute,
               private alojamientoService: AlojamientoService,
@@ -23,22 +23,19 @@ export class ListarAlojamientoUsuComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
-    this.usuario = new Usuario();
 
-    this.usuario.correo = this.route.snapshot.params['correo'];
-
-    this.alojamientoService.getAlojamientoByUsu(this.usuario.correo)
+    this.alojamientoService.getAlojamientoByUsu(this.correo)
       .subscribe(data => {
-        this.usuarioLogeado = data.codigo;
+        this.codigo = data.codigo;
         this.alojamientos = data.respuesta;
         console.log(data);
-        if (this.usuarioLogeado === HttpCode.OK) {
+        if (this.codigo === HttpCode.OK) {
           console.log('Realizado con exito');
         } else {
           console.log('Problema al realiazar la transacción');
         }
       }, err => {
-        alert(err);
+        console.log('error al traer lo alojamientos del usuario!')
       });
 
   }
