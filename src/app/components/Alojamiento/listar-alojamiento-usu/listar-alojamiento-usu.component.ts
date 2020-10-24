@@ -5,6 +5,7 @@ import { Alojamiento } from '../../../model/alojamiento.model';
 import { AlojamientoService } from '../../../service/alojamiento.service';
 import { Usuario } from '../../../model/usuario.model';
 import { HttpCode } from 'src/app/http/Code.http.reponse';
+import { ImagenAlojamientoService } from '../../../service/imagen-alojamiento.service';
 
 @Component({
   selector: 'app-listar-alojamiento-usu',
@@ -19,6 +20,7 @@ export class ListarAlojamientoUsuComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private alojamientoService: AlojamientoService,
+              private imgAlojService: ImagenAlojamientoService,
               private router: Router) { }
 
   // tslint:disable-next-line: typedef
@@ -38,6 +40,15 @@ export class ListarAlojamientoUsuComponent implements OnInit {
         console.log('error al traer lo alojamientos del usuario!')
       });
 
+  }
+
+  /* ========================== MÉTODOS ============================== */
+  eliminarAlojamiento(idAloj: number){
+    this.imgAlojService.eliminarImagenesAlojamiento(idAloj).subscribe(
+      data => {
+        this.alojamientoService.eliminarAlojamiento(idAloj).subscribe
+      }
+    );
   }
 
 }

@@ -56,4 +56,10 @@ export class AlojamientoService {
   editarAlojamiento(alojamiento: Object): Observable<Object> {
     return this.httpClient.put(`${this.UrlID}`, alojamiento);
   }
+
+
+  /** Author: Christian Mendieta ----------------------------- */
+  eliminarAlojamiento(idAloj: number){
+    return this.httpClient.delete<HttpSimpleResponse>(`${this.UrlID}/${idAloj}`);
+  }
 }
