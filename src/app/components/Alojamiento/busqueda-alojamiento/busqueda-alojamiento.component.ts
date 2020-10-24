@@ -18,7 +18,7 @@ export class BusquedaAlojamientoComponent implements OnInit {
   /* ======================= VARIABLES ======================= */
 
   listaCiudades: Ciudad[];
-  formulario: FormGroup;
+  formulario: FormGroup; 
 
   /* ======================= CONTRUCTORES ======================= */
 

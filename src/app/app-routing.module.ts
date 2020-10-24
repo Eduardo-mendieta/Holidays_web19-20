@@ -16,7 +16,7 @@ import { DetalleUsuarioComponent } from './components/Persona/detalle-usuario/de
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'alojamientos/buscar', component: ListarAlojamientoDisponibleComponent},
-  {path: 'alojamientos/nuevo', component: AddAlojamientoComponent },
+  {path: 'alojamientos/nuevo/:id', component: AddAlojamientoComponent },
   {path: 'usuarios/registro', component: AddUsuarioComponent },
   {path: 'usuarios/editar/:correo', component: EditUsuarioComponent},
   {path: 'usuarios/login', component: LoginComponent},

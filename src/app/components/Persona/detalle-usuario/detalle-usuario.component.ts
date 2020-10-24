@@ -47,8 +47,9 @@ export class DetalleUsuarioComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-  agregar() {
-    this.router.navigate(['alojamientos/nuevo']);
+
+  goToNuevoAlojamientoComponent() {
+    this.router.navigate(['alojamientos/nuevo', this.usuario.id]);
   }
 
 }

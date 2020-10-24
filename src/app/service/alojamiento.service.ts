@@ -44,8 +44,8 @@ export class AlojamientoService {
   }
 
   // tslint:disable-next-line: ban-types
-  createAlojamiento(alojamiento: Object): Observable<Object> {
-    return this.httpClient.post(`${this.UrlAlojamiento}`, alojamiento);
+  createAlojamiento(alojamiento: Alojamiento, userId: number, ciudadId: number, tipoId: number) {
+    return this.httpClient.post<HttpObjectResponse<Alojamiento>>(`${this.UrlID}/${userId}/${ciudadId}/${tipoId}`, alojamiento);
   }
 
   getAlojomientoID(id: number) {

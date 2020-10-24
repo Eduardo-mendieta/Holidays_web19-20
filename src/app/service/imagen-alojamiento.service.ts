@@ -19,6 +19,12 @@ export class ImagenAlojamientoService {
 
   /* ============================= MÉTODOS ============================= */
 
+  subirImagen(alojId: number, imagen: File) {
+    const formData = new FormData();
+    formData.append('multipartFile', imagen);
+    return this.httpClient.post<HttpSimpleResponse>(`${this.url}/${alojId}`, formData);
+  }
+
   getImgsAlojamiento(alojId: number) {
     return this.httpClient.get<HttpListResponse<ImagenAlojamiento>>(`${this.url}/${alojId}`);
   }
