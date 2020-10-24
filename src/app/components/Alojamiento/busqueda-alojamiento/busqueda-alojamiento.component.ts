@@ -73,14 +73,14 @@ export class BusquedaAlojamientoComponent implements OnInit {
         AppUtilService.estadoConexion = true;
         this.comunicador.enviarAlojamientosDisponibles(data);
         if (AlojamientoUtilService.ubicacionActual === AlojamientoUtilService.HOME_PAGE) {
-          this.router.navigate(["buscar"]);
+          this.router.navigate(['/alojamientos/buscar']);
         }
       },
       error => {
         console.log('¡Servidor temporalmente fuera de servicio!');
         AppUtilService.estadoConexion = false;
         if (AlojamientoUtilService.ubicacionActual === AlojamientoUtilService.HOME_PAGE) {
-          this.router.navigate(["buscar"]);
+          this.router.navigate(['/alojamientos/buscar']);
         }
       }
     );
