@@ -15,11 +15,12 @@ import { TarjetaAlojamientoComponent } from './components/Alojamiento/tarjeta-al
 // tslint:disable-next-line: max-line-length
 import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
 import { UsuarioService } from './service/usuario.service';
-import { AlojamientoDetalleComponent } from './components/alojamiento/alojamiento-detalle/alojamiento-detalle.component';
+import { AlojamientoDetalleComponent } from './components/Alojamiento/alojamiento-detalle/alojamiento-detalle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AlojamientoService } from './service/alojamiento.service';
 import { UpdateAlojamientoComponent } from './components/Alojamiento/update-alojamiento/update-alojamiento.component';
 import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamiento/add-alojamiento.component';
+import { EditAlojamientoComponent } from './components/Alojamiento/edit-alojamiento/edit-alojamiento.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamient
     HomeComponent,
     TarjetaAlojamientoComponent,
     ListarAlojamientoDisponibleComponent,
+    EditAlojamientoComponent,
   ],
   imports: [
     BrowserModule,
