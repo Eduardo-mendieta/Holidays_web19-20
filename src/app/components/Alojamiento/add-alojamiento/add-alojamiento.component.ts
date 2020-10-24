@@ -12,7 +12,7 @@ export class AddAlojamientoComponent implements OnInit {
 
   alojamieto: Alojamiento = new Alojamiento();
   submitted = false;
-  constructor(private reouter: Router, private service: AlojamientoService) { }
+  constructor( private service: AlojamientoService) { }
 
   ngOnInit(): void {
   }

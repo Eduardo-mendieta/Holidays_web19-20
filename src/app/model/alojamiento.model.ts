@@ -13,7 +13,6 @@ export class Alojamiento {
     numeroBanos: number;
     numeroHabitaciones: number;
     precioPorNoche: number;
-    disponible: boolean;
     usuario: Usuario;
     ciudad: Ciudad;
     tVivienda: TipoVivienda;
