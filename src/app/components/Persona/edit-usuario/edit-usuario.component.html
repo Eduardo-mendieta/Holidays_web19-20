@@ -1,5 +1,47 @@
+<<<<<<< HEAD
 <!-- -------------- Menu principal -------------- -->
 <app-menu-nav></app-menu-nav>
 
 <!-- -------------- Editar Usuario -------------- -->
 <p>edit-usuario works!</p>
+=======
+<h3>Eliminar Empleado</h3>
+<div style="width: 400px;">
+    <form (ngSubmit)="onSubmit ()">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="firstName" required [(ngModel)]="usuario.nombre" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Correo<i class="fas fa-clipboard-prescription    "></i></label>
+            <input type="text" class="form-control" id="lastName" required [(ngModel)]="usuario.correo" name="lastName">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Fecha Nacimiento</label>
+            <input type="text" class="form-control" id="emailId" required [(ngModel)]="usuario.fechaNacimiento" name="emailId">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Genero</label>
+            <input type="text" class="form-control" id="emailId" required [(ngModel)]="usuario.genero" name="emailId">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Password</label>
+            <input type="text" class="form-control" id="emailId" required [(ngModel)]="usuario.password" name="emailId">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Telefono</label>
+            <input type="text" class="form-control" id="emailId" required [(ngModel)]="usuario.telefono" name="emailId">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button (click)="goDetalles(usuario.correo)" class="btn btn-info" style="margin-left: 10px">Detalles Usuario</button>
+    </form>
+
+
+</div>
+>>>>>>> e5c7f8057fb40c377342880c8bd2b57519253794

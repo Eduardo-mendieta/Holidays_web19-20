@@ -43,7 +43,7 @@ export class DetalleUsuarioComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   editarUsu(correo: string) {
-    this.router.navigate(['editar', correo]);
+    this.router.navigate(['usuarios/editar', correo]);
   }
 
   // tslint:disable-next-line: typedef
