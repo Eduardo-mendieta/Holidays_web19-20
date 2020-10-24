@@ -8,6 +8,7 @@ import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamient
 // tslint:disable-next-line: max-line-length
 import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
+import { DetalleUsuarioComponent } from './components/Persona/detalle-usuario/detalle-usuario.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path: 'usuarios/editar/:correo', component: EditUsuarioComponent},
   {path: 'usuarios/login', component: LoginComponent},
   {path: 'usuarios/listar', component: ListarUsuarioComponent},
-  {path: 'usuarios/detalle/:correo', component: ListarUsuarioComponent},
+  {path: 'usuarios/detalle/:correo', component: DetalleUsuarioComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

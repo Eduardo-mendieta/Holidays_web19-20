@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpCode } from 'src/app/http/Code.http.reponse';
 import { Usuario } from '../../../model/usuario.model';
 import { UsuarioService } from '../../../service/usuario.service';
+import { Alojamiento } from '../../../model/alojamiento.model';
+import { AlojamientoService } from '../../../service/alojamiento.service';
 
 @Component({
   selector: 'app-detalle-usuario',
@@ -16,7 +18,8 @@ export class DetalleUsuarioComponent implements OnInit {
   usuarioLogeado = 0;
 
   constructor(private route: ActivatedRoute, private router: Router,
-              private usuarioService: UsuarioService) { }
+              private usuarioService: UsuarioService,
+              private alojamientoServicio: AlojamientoService) { }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
@@ -27,20 +30,27 @@ export class DetalleUsuarioComponent implements OnInit {
     this.usuarioService.buscarpor(this.corre)
       .subscribe(data => {
         this.usuarioLogeado = data.codigo;
+        this.usuario = data.respuesta;
         console.log(data);
         if (this.usuarioLogeado === HttpCode.OK) {
           console.log('Realizado con exito');
         } else {
-          console.log('Proble al realiazar la transacción');
+          console.log('Problema al realiazar la transacción');
         }
-      }, );
+      }, err => {
+        alert(err);
+      });
 
   }
 
   // tslint:disable-next-line: typedef
-  editarUsu() {
-    this.router.navigate(['usuarios/editar/:correo']);
+  editarUsu(correo: string) {
+    this.router.navigate(['editar', correo]);
   }
 
+  // tslint:disable-next-line: typedef
+  agregar() {
+    this.router.navigate(['alojamientos/nuevo']);
+  }
 
 }
