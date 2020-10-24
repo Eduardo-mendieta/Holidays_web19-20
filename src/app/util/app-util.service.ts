@@ -7,6 +7,7 @@ export class AppUtilService {
 
 /* =================== VARIABLES =================== */
   static estadoConexion = false;
+  static sesion = false;
 
 /* =================== CONSTRUCTORES =================== */
   constructor() { }

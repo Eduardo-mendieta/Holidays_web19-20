@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { AppUtil } from 'src/app/util/app.util';
 
 @Component({
   selector: 'app-sesion',
@@ -9,12 +10,13 @@ export class SesionComponent implements OnInit {
 
   /* ============================ VARIABLES ================================ */
 
-  sesion = false;
+  sesion: boolean;
 
   /* ============================ CONSTRUCTORES ================================ */
   constructor() { }
 
   ngOnInit(): void {
+    this.sesion = AppUtil.sesion;
   }
 
   /* ============================ MÉTODOS ================================ */
