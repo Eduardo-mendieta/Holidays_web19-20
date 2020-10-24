@@ -10,7 +10,7 @@
         <p>Camas: <span>{{alojamiento.numeroCamas}}</span></p>
         <p>Precio por noche: <span>$</span><span class="precio">{{alojamiento.precioPorNoche}}</span></p>
         <div class="btn-ver-mas">
-            <button click = "vermas()">¡Ver mas!</button>
+            <button routerLink="alojamientos/{{alojamiento.id}}">¡Ver mas!</button>
         </div>
     </div>
 </div>

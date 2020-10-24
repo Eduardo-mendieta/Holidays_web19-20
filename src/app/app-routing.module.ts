@@ -7,8 +7,11 @@ import { HomeComponent } from './components/home/home.component';
 import { AddAlojamientoComponent } from './components/Alojamiento/add-alojamiento/add-alojamiento.component';
 // tslint:disable-next-line: max-line-length
 import { ListarAlojamientoDisponibleComponent } from './components/Alojamiento/listar-alojamiento-disponible/listar-alojamiento-disponible.component';
+import { AlojamientoDetalleComponent } from './components/Alojamiento/alojamiento-detalle/alojamiento-detalle.component';
+import { CommonModule } from '@angular/common';
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
 import { DetalleUsuarioComponent } from './components/Persona/detalle-usuario/detalle-usuario.component';
+
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -17,13 +20,23 @@ const routes: Routes = [
   {path: 'usuarios/registro', component: AddUsuarioComponent },
   {path: 'usuarios/editar/:correo', component: EditUsuarioComponent},
   {path: 'usuarios/login', component: LoginComponent},
+  {path: 'alojamientos/{id}', component: AlojamientoDetalleComponent},
   {path: 'usuarios/listar', component: ListarUsuarioComponent},
   {path: 'usuarios/detalle/:correo', component: DetalleUsuarioComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+imports: [
+  CommonModule,
+  RouterModule.forRoot(
+    routes,
+    { enableTracing: true }
+  )
+],
+declarations: [],
+exports : [
+  RouterModule
+],
 })
 export class AppRoutingModule { }
