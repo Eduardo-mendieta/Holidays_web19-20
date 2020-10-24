@@ -35,19 +35,25 @@ export class AlojamientoService {
     );
   }
 
-  getAlojamientoByUsu(correo: string) {
-    return this.httpClient.get<HttpListResponse<Alojamiento>>(`${this.UrlID}/${correo}`);
+  getAlojamientoByUsu(usuario: string) {
+    return this.httpClient.get<HttpListResponse<Alojamiento>>(`${this.UrlID}/${usuario}`);
   }
 
   getAlojamiento() {
     return this.httpClient.get<Alojamiento[]>(this.UrlAlojamiento);
   }
 
+  // tslint:disable-next-line: ban-types
   createAlojamiento(alojamiento: Object): Observable<Object> {
     return this.httpClient.post(`${this.UrlAlojamiento}`, alojamiento);
   }
 
   getAlojomientoID(id: number) {
     return this.httpClient.get<HttpObjectResponse<Alojamiento>>(`${this.UrlID}/${id}`);
-}
+  }
+
+  // tslint:disable-next-line: ban-types
+  editarAlojamiento(alojamiento: Object): Observable<Object> {
+    return this.httpClient.put(`${this.UrlID}`, alojamiento);
+  }
 }
