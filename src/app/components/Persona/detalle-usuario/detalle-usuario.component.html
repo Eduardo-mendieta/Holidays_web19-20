@@ -1,0 +1,30 @@
+<h2>Datos del Usuario</h2>
+<div>
+    <hr/>
+    <div *ngIf="usuario">
+        <div>
+            <label><b>Nombre:</b></label> {{usuario.nombre}}
+        </div>
+        <div>
+            <label><b>Correo: </b></label> {{usuario.correo}}
+        </div>
+        <div>
+            <label><b>Genero: </b></label> {{usuario.genero}}
+        </div>
+        <div>
+            <label><b>Fecha de nacimiento: </b></label> {{usuario.fechaNacimiento}}
+        </div>
+        <div>
+            <label><b>Password: </b></label> {{usuario.password}}
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <button (click)="editarUsu(usuario.correo)" class="btn btn-warning">Editar Usuario</button>
+    <button (click)="agregar()" class="btn btn-warning" style="margin-left: 10px">Agregar Nuevo Alojamiento</button><br>
+    <br><br><br>
+
+    <app-listar-alojamiento-usu></app-listar-alojamiento-usu>
+
+</div>

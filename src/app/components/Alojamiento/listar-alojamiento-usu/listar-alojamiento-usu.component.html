@@ -1,0 +1,33 @@
+<div class="panel-heading">
+    <h2>Listado Alojamientos</h2>
+</div>
+<div class="panel-body">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Condiciones de uso</th>
+                <th>Descripcion</th>
+                <th>Número de baños</th>
+                <th>Numero de camas</th>
+                <th>Numero de habitaciones</th>
+                <th>Precio</th>
+                <th>Servicios</th>
+                <th>Ubicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let alojamiento of alojamientos">
+                <td>{{alojamiento.descripcion}}</td>
+                <td>{{alojamiento.condicionesUso}}</td>
+                <td>{{alojamiento.numeroBanos}}</td>
+                <td>{{alojamiento.numeroCamas}}</td>
+                <td>{{alojamiento.numeroHabitaciones}}</td>
+                <td>{{alojamiento.precioPorNoche}}</td>
+                <td>{{alojamiento.servicios}}</td>
+                <td>{{alojamiento.ubicacion}}</td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

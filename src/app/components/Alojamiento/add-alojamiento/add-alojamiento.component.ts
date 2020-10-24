@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Alojamiento } from '../../../model/alojamiento.model';
 import { AlojamientoService } from '../../../service/alojamiento.service';
 import { HttpClient } from '@angular/common/http';
+import { HttpCode } from 'src/app/http/Code.http.reponse';
 
 @Component({
   selector: 'app-add-alojamiento',
@@ -14,7 +15,7 @@ export class AddAlojamientoComponent implements OnInit {
   selectedFile: File = null;
   alojamiento: Alojamiento = new Alojamiento();
   submitted = false;
-  constructor(private reouter: Router, private service: AlojamientoService, private http: HttpClient) { }
+  constructor( private service: AlojamientoService, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -25,11 +26,17 @@ export class AddAlojamientoComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-  Guardar() {
+  /*Guardar() {
     this.service.createAlojamiento(this.alojamiento)
       .subscribe(data => {console.log(data),
-      this.alojamiento = data.respuesta; },
-      error => console.log(error));
+      //this.alojamiento = data.respuesta;}
+      //error => console.log(error));
+    this.alojamiento = new Alojamiento();
+  }*/
+
+  Guardar() {
+    this.service.createAlojamiento(this.alojamiento)
+      .subscribe(data => console.log(data), error => console.log(error));
     this.alojamiento = new Alojamiento();
   }
 
