@@ -15,9 +15,10 @@ import { ImagenAlojamientoService } from '../../../service/imagen-alojamiento.se
 export class ListarAlojamientoUsuComponent implements OnInit {
 
   @Input() correo: string;
+  @Input() alojamiento: Alojamiento;
   alojamientos: Array<Alojamiento>;
   codigo = 0;
-
+  idAloj = 0;
   constructor(private route: ActivatedRoute,
               private alojamientoService: AlojamientoService,
               private imgAlojService: ImagenAlojamientoService,
@@ -25,6 +26,7 @@ export class ListarAlojamientoUsuComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
+    this.idAloj = this.alojamiento.id;
 
     this.alojamientoService.getAlojamientoByUsu(this.correo)
       .subscribe(data => {
@@ -46,9 +48,26 @@ export class ListarAlojamientoUsuComponent implements OnInit {
   eliminarAlojamiento(idAloj: number){
     this.imgAlojService.eliminarImagenesAlojamiento(idAloj).subscribe(
       data => {
-        this.alojamientoService.eliminarAlojamiento(idAloj).subscribe
+        this.alojamientoService.eliminarAlojamiento(idAloj).subscribe;
       }
     );
   }
 
+  detalle(id: number) {
+    if (this.idAloj !== 0) {
+        this.alojamientoService.getAlojomientoID(id).subscribe(
+          () => {
+            console.log(this.idAloj);
+            this.router.navigate(['alojamientos/editar', this.idAloj]);
+          }
+        );
+    } else {
+      console.log('Error del sistema');
+      console.log(this.idAloj);
+    }
+
+  /*editarAlo(alojamiento: Alojamiento) {
+    this.router.navigate(['alojamientos/editar', alojamiento]);
+  }*/
+}
 }
