@@ -39,8 +39,12 @@ export class AlojamientoService {
     return this.httpClient.get<Alojamiento[]>(this.UrlAlojamiento);
   }
 
-  createAlojamiento(alojamiento: Object): Observable<Object> {
-    return this.httpClient.post(`${this.UrlAlojamiento}`, alojamiento);
+  //createAlojamiento(alojamiento: Object): Observable<Object> {
+    //return this.httpClient.post(`${this.UrlAlojamiento}`, alojamiento);
+  //}
+
+  createAlojamiento(alojamiento: Alojamiento) {
+    return this.httpClient.post<HttpObjectResponse<Alojamiento>>(`${this.UrlAlojamiento}`, alojamiento);
   }
 
   getAlojomientoID(id: number) {
