@@ -11,6 +11,7 @@ import { AlojamientoDetalleComponent } from './components/Alojamiento/alojamient
 import { CommonModule } from '@angular/common';
 import { ListarUsuarioComponent } from './components/Persona/listar-usuario/listar-usuario.component';
 import { DetalleUsuarioComponent } from './components/Persona/detalle-usuario/detalle-usuario.component';
+import { EditAlojamientoComponent } from './components/Alojamiento/edit-alojamiento/edit-alojamiento.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'usuarios/listar', component: ListarUsuarioComponent},
   {path: 'usuarios/detalle/:correo', component: DetalleUsuarioComponent},
   {path: 'alojamientos/detalle/:id', component: AlojamientoDetalleComponent},
+  {path: 'alojamientos/editar/:alojamiento', component: EditAlojamientoComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

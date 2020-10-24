@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Alojamiento } from '../../../model/alojamiento.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AlojamientoService } from '../../../service/alojamiento.service';
 
 @Component({
@@ -10,11 +10,17 @@ import { AlojamientoService } from '../../../service/alojamiento.service';
 })
 export class EditAlojamientoComponent implements OnInit {
 
-  alojamieto: Alojamiento = new Alojamiento();
+  alojamieto: Alojamiento;
   submitted = false;
-  constructor(private reouter: Router, private service: AlojamientoService) { }
+  constructor(private reouter: Router, private service: AlojamientoService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const id = this.activatedRoute.snapshot.params.id;
+    this.service.getAlojomientoID(id).subscribe(data => {
+      this.alojamieto = data.respuesta;
+    }, err => {
+      alert(err);
+    });
   }
 
   nuevoUsuario(): void {
@@ -23,8 +29,8 @@ export class EditAlojamientoComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-  Editar() {
-    this.service.editarAlojamiento(this.alojamieto)
+  Editar(alo: Alojamiento) {
+    this.service.editarAlojamiento(alo)
       .subscribe(data => console.log(data), error => console.log(error));
     this.alojamieto = new Alojamiento();
   }
@@ -32,7 +38,7 @@ export class EditAlojamientoComponent implements OnInit {
   // tslint:disable-next-line: typedef
   onSubmit() {
     this.submitted = true;
-    this.Editar();
+    this.Editar(this.alojamieto);
   }
 
 }
